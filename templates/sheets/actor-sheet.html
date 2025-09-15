@@ -1,6 +1,5 @@
 <form class="theproject-sheet" autocomplete="off">
   <section class="patente-layout">
-    
     <!-- COLONNA SINISTRA -->
     <div class="patente-sinistra">
       <!-- Foto PG -->
@@ -13,12 +12,12 @@
       <div class="lista-armi">
         <h3>LISTA ARMI</h3>
         <div class="armi-container">
-          {{#each system.armi}}
-            <div class="arma" data-index="{{@index}}">
-              <input type="text" name="system.armi.{{@index}}.nome" value="{{this.nome}}" placeholder="Nome arma" />
-              <input type="number" name="system.armi.{{@index}}.danno" value="{{this.danno}}" placeholder="Danno" min="1" />
-              <input type="number" name="system.armi.{{@index}}.livello" value="{{this.livello}}" placeholder="Livello" min="1" max="3" />
-              <button type="button" class="rimuovi-arma">🗑</button>
+          {{#each system.armi as |arma idx|}}
+            <div class="arma" data-index="{{idx}}">
+              <input type="text" name="system.armi.{{idx}}.nome" value="{{arma.nome}}" placeholder="Nome arma" />
+              <input type="number" name="system.armi.{{idx}}.danno" value="{{arma.danno}}" placeholder="Danno" min="1" />
+              <input type="number" name="system.armi.{{idx}}.livello" value="{{arma.livello}}" placeholder="Livello" min="1" max="3" />
+              <button type="button" class="rimuovi-arma" title="Rimuovi arma">🗑</button>
             </div>
           {{/each}}
         </div>
@@ -63,19 +62,16 @@
       <!-- Storia PG -->
       <div class="storia-pg">
         <h3>STORIA DEL PG</h3>
-        <textarea name="system.storia" rows="8">{{system.storia}}</textarea>
+        <textarea name="system.storia" rows="10">{{system.storia}}</textarea>
       </div>
 
-      <!-- Attacco -->
-      <div class="attacco-section">
-        <h3>Attacco</h3>
-        <label>Seleziona arma</label>
+      <!-- Azioni -->
+      <div class="azioni">
+        <h3>Azione: Attacco (Sangue Freddo)</h3>
         <select class="arma-selezionata">
-          {{#each system.armi}}
-            {{#if (lte this.livello ../system.coolLevel)}}
-              <option value="{{@index}}">
-                {{this.nome}} (Danno: {{this.danno}}, Liv: {{this.livello}})
-              </option>
+          {{#each system.armi as |arma idx|}}
+            {{#if (lte arma.livello ../system.coolLevel)}}
+              <option value="{{idx}}">{{arma.nome}} (Danno: {{arma.danno}}, Liv: {{arma.livello}})</option>
             {{/if}}
           {{/each}}
         </select>

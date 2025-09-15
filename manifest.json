@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Giovanni",
   "minimumCoreVersion": "11",
-  "compatibleCoreVersion": "11",
+  "compatibleCoreVersion": "12",
   "system": "the-project",
   "scripts": ["scripts/the-project.js"],
   "styles": ["styles/the-project.css"],

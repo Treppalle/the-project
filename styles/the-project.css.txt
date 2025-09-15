@@ -1,0 +1,133 @@
+.patente-layout {
+  display: flex;
+  gap: 20px;
+  background: #fdfaf3;
+  border: 2px solid #2a4d7a;
+  padding: 15px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.patente-sinistra {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.foto-pg {
+  position: relative;
+  border: 2px solid #2a4d7a;
+  background: #fff;
+  padding: 5px;
+  text-align: center;
+}
+
+.foto-pg img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.foto-label {
+  font-size: 0.8em;
+  color: #2a4d7a;
+  display: block;
+  margin-top: 5px;
+}
+
+.lista-armi {
+  border: 1px solid #2a4d7a;
+  padding: 8px;
+  background: #eef3f8;
+}
+
+.lista-armi h3 {
+  margin: 0 0 5px;
+  font-size: 1em;
+  color: #2a4d7a;
+}
+
+.armi-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.arma {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.arma input[type="text"] {
+  flex: 2;
+}
+
+.arma input[type="number"] {
+  width: 60px;
+}
+
+.arma button.rimuovi-arma {
+  background: #c0392b;
+  color: white;
+  border: none;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+
+.patente-destra {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dati-pg {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px 10px;
+}
+
+.dati-pg label {
+  font-weight: bold;
+  color: #2a4d7a;
+  grid-column: 1 / 3;
+}
+
+.dati-pg input {
+  grid-column: 1 / 3;
+}
+
+.salute-row {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.salute-row input {
+  flex: 1;
+}
+
+.storia-pg {
+  border: 1px solid #2a4d7a;
+  background: #eef3f8;
+  padding: 8px;
+}
+
+.storia-pg h3 {
+  margin-top: 0;
+  color: #2a4d7a;
+}
+
+.attacco-section {
+  border: 1px solid #2a4d7a;
+  background: #eef3f8;
+  padding: 8px;
+  margin-top: 10px;
+}
+
+.attacco-section h3 {
+  margin-top: 0;
+  color: #2a4d7a;
+}

@@ -1,0 +1,86 @@
+<form class="theproject-sheet" autocomplete="off">
+  <section class="patente-layout">
+    
+    <!-- COLONNA SINISTRA -->
+    <div class="patente-sinistra">
+      <!-- Foto PG -->
+      <div class="foto-pg">
+        <img src="{{actor.img}}" title="{{actor.name}}" data-edit="img" />
+        <span class="foto-label">FOTO DEL PG</span>
+      </div>
+
+      <!-- Lista Armi -->
+      <div class="lista-armi">
+        <h3>LISTA ARMI</h3>
+        <div class="armi-container">
+          {{#each system.armi}}
+            <div class="arma" data-index="{{@index}}">
+              <input type="text" name="system.armi.{{@index}}.nome" value="{{this.nome}}" placeholder="Nome arma" />
+              <input type="number" name="system.armi.{{@index}}.danno" value="{{this.danno}}" placeholder="Danno" min="1" />
+              <input type="number" name="system.armi.{{@index}}.livello" value="{{this.livello}}" placeholder="Livello" min="1" max="3" />
+              <button type="button" class="rimuovi-arma">🗑</button>
+            </div>
+          {{/each}}
+        </div>
+        <button type="button" class="aggiungi-arma">+ Aggiungi arma</button>
+      </div>
+    </div>
+
+    <!-- COLONNA DESTRA -->
+    <div class="patente-destra">
+      <div class="dati-pg">
+        <label>Nome del giocatore</label>
+        <input type="text" name="system.nomeGiocatore" value="{{system.nomeGiocatore}}" />
+
+        <label>Nome del PG</label>
+        <input type="text" name="name" value="{{actor.name}}" />
+
+        <label>Età del PG</label>
+        <input type="number" name="system.eta" value="{{system.eta}}" min="0" />
+
+        <label>Salute del PG</label>
+        <div class="salute-row">
+          <input type="number" name="system.salute" value="{{system.salute}}" readonly />
+          <button type="button" class="calcola-salute">Calcola</button>
+        </div>
+
+        <label>Favori</label>
+        <input type="number" name="system.favori" value="{{system.favori}}" min="0" />
+
+        <label>Soldi (Livello)</label>
+        <input type="number" name="system.moneyLevel" value="{{system.moneyLevel}}" min="0" max="3" />
+
+        <label>Sangue Freddo (Livello)</label>
+        <input type="number" name="system.coolLevel" value="{{system.coolLevel}}" min="0" max="3" />
+
+        <label>Guida (Livello)</label>
+        <input type="number" name="system.driveLevel" value="{{system.driveLevel}}" min="0" max="3" />
+
+        <label>Costituzione (Livello)</label>
+        <input type="number" name="system.constitutionLevel" value="{{system.constitutionLevel}}" min="0" max="3" />
+      </div>
+
+      <!-- Storia PG -->
+      <div class="storia-pg">
+        <h3>STORIA DEL PG</h3>
+        <textarea name="system.storia" rows="8">{{system.storia}}</textarea>
+      </div>
+
+      <!-- Attacco -->
+      <div class="attacco-section">
+        <h3>Attacco</h3>
+        <label>Seleziona arma</label>
+        <select class="arma-selezionata">
+          {{#each system.armi}}
+            {{#if (lte this.livello ../system.coolLevel)}}
+              <option value="{{@index}}">
+                {{this.nome}} (Danno: {{this.danno}}, Liv: {{this.livello}})
+              </option>
+            {{/if}}
+          {{/each}}
+        </select>
+        <button type="button" class="attacco-sanguefreddo">Attacca</button>
+      </div>
+    </div>
+  </section>
+</form>

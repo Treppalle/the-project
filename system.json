@@ -5,9 +5,13 @@
   "version": "0.1.0",
   "author": "Treppalle",
   "minimumCoreVersion": "11",
-  "compatibleCoreVersion": "11",
-  "scripts": ["scripts/the-project.js"],
-  "styles": ["styles/the-project.css"],
+  "compatibleCoreVersion": "12",
+  "scripts": [
+    "scripts/the-project.js"
+  ],
+  "styles": [
+    "styles/the-project.css"
+  ],
   "languages": [
     {
       "lang": "it",
@@ -15,5 +19,9 @@
       "path": "lang/it.json"
     }
   ],
-  "template": "template.json"
+  "template": "template.json",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "12"
+  }
 }

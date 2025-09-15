@@ -113,7 +113,7 @@ class TheProjectActorSheet extends ActorSheet {
 Hooks.once("init", () => {
   try { Actors.unregisterSheet("core", ActorSheet); } catch (e) {}
   Actors.registerSheet("the-project", TheProjectActorSheet, {
-    types: ["character"],
+    /* types omitted => all actor types */
     makeDefault: true,
     label: "Scheda Personaggio (The Project)"
   });

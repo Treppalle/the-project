@@ -1,19 +1,32 @@
 {
   "Actor": {
-    "types": ["character"],
+    "types": [
+      "character"
+    ],
     "templates": {
-      "character": {
-        "nomeGiocatore": "",
-        "eta": 0,
-        "salute": 0,
-        "favori": 0,
-        "moneyLevel": 0,
-        "coolLevel": 0,
-        "driveLevel": 0,
-        "constitutionLevel": 0,
-        "storia": "",
-        "armi": []
+      "base": {
+        "system": {
+          "nomeGiocatore": "",
+          "eta": 0,
+          "salute": 0,
+          "favori": 0,
+          "moneyLevel": 0,
+          "coolLevel": 0,
+          "driveLevel": 0,
+          "constitutionLevel": 0,
+          "armi": [],
+          "storia": ""
+        }
       }
+    },
+    "character": {
+      "templates": [
+        "base"
+      ]
     }
+  },
+  "Item": {
+    "types": [],
+    "templates": {}
   }
 }

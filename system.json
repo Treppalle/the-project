@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Treppalle",
   "minimumCoreVersion": "11",
-  "compatibleCoreVersion": "12",
+  "compatibleCoreVersion": "11",
   "scripts": [
     "scripts/the-project.js"
   ],
@@ -20,8 +20,9 @@
     }
   ],
   "template": "template.json",
+  "id": "the-project",
   "compatibility": {
-    "minimum": "11",
-    "verified": "12"
+    "minimum": 12,
+    "verified": 12
   }
 }

@@ -3,10 +3,16 @@
   "title": "The Project",
   "description": "Sistema GDR multiambientazione basato su D6",
   "version": "0.1.0",
-  "author": "Giovanni",
-  "minimumCoreVersion": "11",
-  "compatibleCoreVersion": "13",
-  "system": "the-project",
+  "authors": [
+    {
+      "name": "Giovanni"
+    }
+  ],
+  "compatibility": {
+    "minimum": "11",
+    "verified": "13"
+  },
+  "type": "system",
   "scripts": ["scripts/the-project.js"],
   "styles": ["styles/the-project.css"],
   "languages": [

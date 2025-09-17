@@ -2,10 +2,10 @@
   "name": "the-project",
   "title": "The Project",
   "description": "Sistema GDR multiambientazione basato su D6",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Treppalle",
-  "minimumCoreVersion": "11",
-  "compatibleCoreVersion": "11",
+  "minimumCoreVersion": "13",
+  "compatibleCoreVersion": "13",
   "scripts": [
     "scripts/the-project.js"
   ],
@@ -22,7 +22,7 @@
   "template": "template.json",
   "id": "the-project",
   "compatibility": {
-    "minimum": 12,
-    "verified": 12
+    "minimum": 13,
+    "verified": 13
   }
 }

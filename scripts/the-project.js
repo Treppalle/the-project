@@ -1,15 +1,12 @@
-// ===============================
-// Funzione per calcolare la Salute
-// ===============================
 async function calcolaSalute(actor) {
   const eta = actor.system.eta || 0;
   const costituzioneLevel = actor.system.constitutionLevel || 1;
 
-  const rollDiv = await (await new Roll("1d6")).evaluate({ async: true });
+  const rollDiv = await new Roll("1d6").roll({ async: true });
   const x = Math.ceil(eta / rollDiv.total);
 
   const dadiExtra = 1 + costituzioneLevel;
-  const rollExtra = await (await new Roll(`${dadiExtra}d6`)).evaluate({ async: true });
+  const rollExtra = await new Roll(`${dadiExtra}d6`).roll({ async: true });
   const saluteFinale = x + rollExtra.total;
 
   await actor.update({ "system.salute": saluteFinale });
@@ -26,28 +23,22 @@ async function calcolaSalute(actor) {
   });
 }
 
-// ===============================
-// Hook: gestione scheda attore
-// ===============================
-Hooks.on("renderActorSheetV2", (app, html) => {
+Hooks.on("renderActorSheet", (app, html) => {
   const actor = app.actor;
 
-  // Aggiungi arma
   html.find(".aggiungi-arma").click(async () => {
-    const armi = foundry.utils.duplicate(actor.system.armi || []);
+    const armi = duplicate(actor.system.armi || []);
     armi.push({ nome: "", danno: 1, livello: 1 });
     await actor.update({ "system.armi": armi });
   });
 
-  // Rimuovi arma
   html.find(".rimuovi-arma").click(async (ev) => {
     const index = Number(ev.currentTarget.closest(".arma").dataset.index);
-    const armi = foundry.utils.duplicate(actor.system.armi || []);
+    const armi = duplicate(actor.system.armi || []);
     armi.splice(index, 1);
     await actor.update({ "system.armi": armi });
   });
 
-  // Attacco con Sangue Freddo
   html.find(".attacco-sanguefreddo").click(async () => {
     const armaIndex = parseInt(html.find(".arma-selezionata").val());
     const level = actor.system.coolLevel || 1;
@@ -80,8 +71,8 @@ Hooks.on("renderActorSheetV2", (app, html) => {
       }
     }
 
-    const playerRoll = await (await new Roll(`${diceCount}d6`)).evaluate({ async: true });
-    const masterRoll = await (await new Roll("1d6")).evaluate({ async: true });
+    const playerRoll = await new Roll(`${diceCount}d6`).roll({ async: true });
+    const masterRoll = await new Roll("1d6").roll({ async: true });
     const hit = playerRoll.total >= masterRoll.total;
 
     let message = `
@@ -103,7 +94,6 @@ Hooks.on("renderActorSheetV2", (app, html) => {
     });
   });
 
-  // Calcolo manuale Salute
   html.find(".calcola-salute").click(async () => {
     if (!actor.system.salute || actor.system.salute === 0) {
       await calcolaSalute(actor);
@@ -113,12 +103,9 @@ Hooks.on("renderActorSheetV2", (app, html) => {
   });
 });
 
-// ===============================
-// Hook: ricalcolo automatico Salute
-// ===============================
-Hooks.on("updateActor", (actor, updateData, options, userId) => {
-  const changedEta = foundry.utils.getProperty(updateData, "system.eta") !== undefined;
-  const changedCost = foundry.utils.getProperty(updateData, "system.constitutionLevel") !== undefined;
+Hooks.on("updateActor", (actor, updateData) => {
+  const changedEta = getProperty(updateData, "system.eta") !== undefined;
+  const changedCost = getProperty(updateData, "system.constitutionLevel") !== undefined;
   const saluteEsistente = actor.system.salute && actor.system.salute > 0;
 
   if (saluteEsistente && (changedEta || changedCost)) {
@@ -126,16 +113,13 @@ Hooks.on("updateActor", (actor, updateData, options, userId) => {
   }
 });
 
-// ===============================
-// Controlli creazione PG
-// ===============================
-Hooks.on("updateActor", (actor, updateData, options, userId) => {
+Hooks.on("updateActor", (actor, updateData) => {
   const keys = ["moneyLevel", "coolLevel", "driveLevel", "constitutionLevel"];
   const creationPhase = actor.getFlag("the-project", "creationPhase") === true;
 
   let current = {};
   keys.forEach(k => {
-    current[k] = foundry.utils.getProperty(updateData, `system.${k}`) ?? actor.system[k] ?? 0;
+    current[k] = getProperty(updateData, `system.${k}`) ?? actor.system[k] ?? 0;
   });
 
   if (creationPhase) {

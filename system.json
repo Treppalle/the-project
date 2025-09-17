@@ -1,28 +1,56 @@
 {
-  "name": "the-project",
-  "title": "The Project",
-  "description": "Sistema GDR multiambientazione basato su D6",
-  "version": "0.1.1",
-  "author": "Treppalle",
-  "minimumCoreVersion": "13",
-  "compatibleCoreVersion": "13",
-  "scripts": [
-    "scripts/the-project.js"
-  ],
-  "styles": [
-    "styles/the-project.css"
-  ],
-  "languages": [
-    {
-      "lang": "it",
-      "name": "Italiano",
-      "path": "lang/it.json"
-    }
-  ],
-  "template": "template.json",
-  "id": "the-project",
-  "compatibility": {
-    "minimum": 13,
-    "verified": 13
-  }
+    "id": "the-project",
+    "title": "The Project",
+    "description": "Sistema GDR multiambientazione basato su D6",
+    "authors": [
+        {
+            "name": "Treppalle",
+            "url": "https://github.com/Treppalle",
+            "discord": "",
+            "flags": {}
+        }
+    ],
+    "url": "https://github.com/Treppalle/the-project",
+    "license": "",
+    "readme": "README.md",
+    "bugs": "",
+    "changelog": "",
+    "media": [
+        {
+            "type": "",
+            "url": "",
+            "thumbnail": ""
+        }
+    ],
+    "version": "1.0.0",
+    "compatibility": {
+        "minimum": 13,
+        "verified": "13.348"
+    },
+    "esmodules": [
+        ""
+    ],
+    "styles": [
+        "styles/the-project.css"
+    ],
+    "languages": [
+        {
+            "lang": "it",
+            "name": "Italiano",
+            "path": "lang/it.json"
+        }
+    ],
+    "packs": [],
+    "packFolders": [],
+    "socket": false,
+    "manifest": "https://raw.githubusercontent.com/Treppalle/the-project/main/manifest.json",
+    "download": "https://github.com/Treppalle/the-project/archive/refs/heads/main.zip",
+    "background": "",
+    "grid": {
+        "distance": 1,
+        "units": "m"
+    },
+    "primaryTokenAttribute": "health",
+    "secondaryTokenAttribute": "power",
+    "flags": {}
 }

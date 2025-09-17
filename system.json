@@ -2,6 +2,11 @@
     "id": "the-project",
     "title": "The Project",
     "description": "Sistema GDR multiambientazione basato su D6",
+    "version": "1.0.0",
+    "compatibility": {
+        "minimum": 13,
+        "verified": "13.348"
+    },
     "authors": [
         {
             "name": "Treppalle",
@@ -22,13 +27,9 @@
             "thumbnail": ""
         }
     ],
-    "version": "1.0.0",
-    "compatibility": {
-        "minimum": 13,
-        "verified": "13.348"
-    },
+    
     "esmodules": [
-        ""
+        "scripts/the-project.js"
     ],
     "styles": [
         "styles/the-project.css"
@@ -42,7 +43,7 @@
     ],
     "packs": [],
     "packFolders": [],
-    "socket": false,
+    "socket": true,
     "manifest": "https://raw.githubusercontent.com/Treppalle/the-project/main/manifest.json",
     "download": "https://github.com/Treppalle/the-project/archive/refs/heads/main.zip",
     "background": "",

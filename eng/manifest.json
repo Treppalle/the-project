@@ -1,0 +1,57 @@
+{
+  "id": "the-project",
+  "title": "The Project",
+  "description": "The TRUE-d6 system for FoundryVTT!",
+  "authors": [
+    {
+      "name": "Cussa Mitre",
+      "url": "https://github.com/Cussa",
+      "discord": "CussaMitre",
+      "flags": {}
+    }
+  ],
+  "url": "https://github.com/Cussa/fvtt-true-d6",
+  "license": "LICENSE",
+  "readme": "README.md",
+  "bugs": "https://github.com/Cussa/fvtt-true-d6/issues",
+  "changelog": "https://github.com/Cussa/fvtt-true-d6/releases",
+  "media": [
+    {
+      "type": "setup",
+      "url": "systems/trued6/assets/banner-white.png",
+      "thumbnail": "systems/trued6/assets/banner-white.png"
+    }
+  ],
+  "version": "0.0.1",
+  "compatibility": {
+    "minimum": 13,
+    "verified": "13.348"
+  },
+  "esmodules": ["module/trued6.mjs"],
+  "styles": ["css/trued6.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [],
+  "packFolders": [],
+  "socket": false,
+  "manifest": "https://github.com/cussa/fvtt-true-d6/releases/download/latest/module.json",
+  "download": "https://github.com/cussa/fvtt-true-d6/releases/download/latest/module.zip",
+  "background": "systems/trued6/assets/banner-white.png",
+  "grid": {
+    "distance": 1,
+    "units": "m"
+  },
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": "power",
+  "flags": {
+    "hotReload": {
+      "extensions": ["css", "hbs", "json"],
+      "paths": ["lang", "css", "templates"]
+    }
+  }
+}

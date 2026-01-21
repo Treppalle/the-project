@@ -8,8 +8,8 @@
       "base": {
         "health": {
           "value": 2,
-          "max": 2,
-          "formula": ""
+          "max": 200,
+          "formula": "1d6"
         }
       }
     },
@@ -18,29 +18,22 @@
         "base"
       ],
       "attributes": {
-        "str": {
-          "value": 1
+        "mon": {
+          "value": 0
         },
-        "dex": {
-          "value": 1
+        "sf": {
+          "value": 0
         },
-        "con": {
-          "value": 1
+        "drv": {
+          "value": 0
         },
-        "int": {
-          "value": 1
+        "cos": {
+          "value": 0
         },
-        "wis": {
-          "value": 1
-        },
-        "cha": {
-          "value": 1
+         "fi": {
+          "value": 0
         }
-      },
-      "classes": "",
-      "level": 1,
-      "race": "",
-      "coins": 100
+      }
     },
     "npc": {
       "templates": [
@@ -62,9 +55,8 @@
   "Item": {
     "types": [
       "inventoryItem",
-      "equipment",
-      "skill"
-    ],
+      "equipment"
+      ],
     "templates": {
       "base": {
         "description": ""

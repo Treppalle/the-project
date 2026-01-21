@@ -1,0 +1,105 @@
+{
+  "Actor": {
+    "types": [
+      "player",
+      "npc"
+    ],
+    "templates": {
+      "base": {
+        "health": {
+          "value": 2,
+          "max": 2,
+          "formula": ""
+        }
+      }
+    },
+    "player": {
+      "templates": [
+        "base"
+      ],
+      "attributes": {
+        "str": {
+          "value": 1
+        },
+        "dex": {
+          "value": 1
+        },
+        "con": {
+          "value": 1
+        },
+        "int": {
+          "value": 1
+        },
+        "wis": {
+          "value": 1
+        },
+        "cha": {
+          "value": 1
+        }
+      },
+      "classes": "",
+      "level": 1,
+      "race": "",
+      "coins": 100
+    },
+    "npc": {
+      "templates": [
+        "base"
+      ],
+      "melee": {
+        "number": 1,
+        "value": 3,
+        "special": ""
+      },
+      "ranged": {
+        "number": 0,
+        "value": 0,
+        "special": ""
+      },
+      "description": ""
+    }
+  },
+  "Item": {
+    "types": [
+      "inventoryItem",
+      "equipment",
+      "skill"
+    ],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "inventoryItem": {
+      "templates": [
+        "base"
+      ],
+      "price": 0
+    },
+    "equipment": {
+      "templates": [
+        "base"
+      ],
+      "type": "Weapon",
+      "attackType": "",
+      "damageBonus": 0,
+      "rollStyle": 0,
+      "defenseValue": 0,
+      "equipped": true,
+      "price": 0
+    },
+    "skill": {
+      "templates": [
+        "base"
+      ],
+      "usageType": "passive",
+      "whenRestUsed": false,
+      "whenFailedUsed": false,
+      "isSpell": false,
+      "isAttack": false,
+      "attribute": "",
+      "rollStyle": 0,
+      "formula": ""
+    }
+  }
+}

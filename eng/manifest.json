@@ -1,34 +1,34 @@
 {
   "id": "the-project",
   "title": "The Project",
-  "description": "The TRUE-d6 system for FoundryVTT!",
+  "description": "Multy Ambient GDR System based on D6",
   "authors": [
     {
-      "name": "Cussa Mitre",
-      "url": "https://github.com/Cussa",
-      "discord": "CussaMitre",
+      "name": "Treppalle",
+      "url": "https://github.com/Treppalle",
+      "discord": "trepalle",
       "flags": {}
     }
   ],
-  "url": "https://github.com/Cussa/fvtt-true-d6",
+  "url": "https://github.com/Treppalle/the-project",
   "license": "LICENSE",
   "readme": "README.md",
-  "bugs": "https://github.com/Cussa/fvtt-true-d6/issues",
-  "changelog": "https://github.com/Cussa/fvtt-true-d6/releases",
+  "bugs": "",
+  "changelog": "",
   "media": [
     {
-      "type": "setup",
-      "url": "systems/trued6/assets/banner-white.png",
-      "thumbnail": "systems/trued6/assets/banner-white.png"
+      "type": "",
+      "url": "",
+      "thumbnail": ""
     }
   ],
-  "version": "0.0.1",
+  "version": "0.1.0",
   "compatibility": {
     "minimum": 13,
     "verified": "13.348"
   },
-  "esmodules": ["module/trued6.mjs"],
-  "styles": ["css/trued6.css"],
+  "esmodules": [""],
+  "styles": [""],
   "languages": [
     {
       "lang": "en",
@@ -39,9 +39,9 @@
   "packs": [],
   "packFolders": [],
   "socket": false,
-  "manifest": "https://github.com/cussa/fvtt-true-d6/releases/download/latest/module.json",
-  "download": "https://github.com/cussa/fvtt-true-d6/releases/download/latest/module.zip",
-  "background": "systems/trued6/assets/banner-white.png",
+  "manifest": "https://raw.githubusercontent.com/Treppalle/the-project/main/manifest.json",
+  "download": "https://github.com/Treppalle/the-project/archive/refs/heads/main.zip",
+  "background": "",
   "grid": {
     "distance": 1,
     "units": "m"

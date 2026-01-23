@@ -20,22 +20,27 @@
       "attributes": {
         "mon": {
           "value": 0,
+          "min": 0,
           "max": 3
         },
         "sf": {
           "value": 0,
+          "min": 0,
           "max": 3
         },
         "drv": {
           "value": 0,
+          "min": 0,
           "max": 3
         },
         "cos": {
           "value": 0,
+          "min": 0,
           "max": 3
         },
          "fi": {
           "value": 0,
+          "min": 0,
           "max": 3
         }
       }

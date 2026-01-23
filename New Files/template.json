@@ -19,19 +19,24 @@
       ],
       "attributes": {
         "mon": {
-          "value": 0
+          "value": 0,
+          "max": 3
         },
         "sf": {
-          "value": 0
+          "value": 0,
+          "max": 3
         },
         "drv": {
-          "value": 0
+          "value": 0,
+          "max": 3
         },
         "cos": {
-          "value": 0
+          "value": 0,
+          "max": 3
         },
          "fi": {
-          "value": 0
+          "value": 0,
+          "max": 3
         }
       }
     },
@@ -65,9 +70,8 @@
     "inventoryItem": {
       "templates": [
         "base"
-      ],
-      "price": 0
-    },
+      ] 
+     },
     "equipment": {
       "templates": [
         "base"
@@ -77,21 +81,7 @@
       "damageBonus": 0,
       "rollStyle": 0,
       "defenseValue": 0,
-      "equipped": true,
-      "price": 0
-    },
-    "skill": {
-      "templates": [
-        "base"
-      ],
-      "usageType": "passive",
-      "whenRestUsed": false,
-      "whenFailedUsed": false,
-      "isSpell": false,
-      "isAttack": false,
-      "attribute": "",
-      "rollStyle": 0,
-      "formula": ""
+      "equipped": true    
     }
   }
 }

@@ -1,0 +1,21 @@
+<div class="item-sheet">
+  <div class="item-header">
+    <img class="item-image" src="{{item.img}}" alt="{{item.name}}"/>
+    <input type="text" name="name" value="{{item.name}}" placeholder="Nome arma"/>
+  </div>
+  <div class="item-body">
+    <div class="item-row">
+      <label>Tier</label>
+      <select name="system.tier">
+        <option value="0" {{#if (eq system.tier 0)}}selected{{/if}}>Tier 0</option>
+        <option value="1" {{#if (eq system.tier 1)}}selected{{/if}}>Tier 1</option>
+        <option value="2" {{#if (eq system.tier 2)}}selected{{/if}}>Tier 2</option>
+        <option value="3" {{#if (eq system.tier 3)}}selected{{/if}}>Tier 3</option>
+      </select>
+    </div>
+    <div class="item-row">
+      <label>Descrizione</label>
+      <textarea name="system.descrizione" placeholder="Descrivi cosa fa questa arma quando viene usata...">{{system.effetto}}</textarea>
+    </div>
+  </div>
+</div>

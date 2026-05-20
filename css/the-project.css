@@ -1,0 +1,368 @@
+.sheet-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+/* === SCHEDA BASE === */
+.theproject-sheet {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* === SFONDO === */
+.card-background {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url("../assets/sfondo.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+/* === CONTENUTO === */
+.card-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+/* === IN ALTO A SINISTRA: foto + nome === */
+.card-top-left {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.actor-image {
+  width: 90px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.4);
+}
+
+.actor-name {
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px black;
+}
+
+/* === IN ALTO A DESTRA === */
+.card-top-right {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* === IN BASSO A SINISTRA === */
+.card-bottom-left {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* === IN BASSO A DESTRA === */
+.card-bottom-right {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+/* === RIGHE === */
+.stat-row, .abilita-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-label {
+  font-weight: bold;
+  text-shadow: 1px 1px 4px black;
+  white-space: nowrap;
+}
+
+.stat-value {
+  text-shadow: 1px 1px 4px black;
+}
+
+/* === INPUT === */
+.theproject-sheet input[type="number"],
+.theproject-sheet input[type="text"] {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  border-radius: 4px;
+  padding: 2px 6px;
+  width: 60px;
+}
+
+.theproject-sheet input[type="text"] {
+  width: 140px;
+}
+
+/* === PALLINI === */
+.pallini {
+  display: flex;
+  gap: 6px;
+}
+
+.pallino {
+  font-size: 20px;
+  color: rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.pallino.attivo {
+  color: #00e5ff;
+  text-shadow: 0 0 8px #00e5ff;
+}
+/* === TAB === */
+.sheet-tabs {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 4px;
+  padding: 6px 8px 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.tab-btn {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  padding: 4px 16px;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.tab-btn.active {
+  background: rgba(0,229,255,0.2);
+  border-color: #00e5ff;
+  color: #00e5ff;
+}
+
+/* === TAB CONTENT === */
+.tab-content {
+  display: none;
+  width: 100%;
+  height: calc(100% - 36px);
+  position: relative;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* === NOTE === */
+.note-content {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  box-sizing: border-box;
+  background: rgba(0,0,0,0.7);
+}
+
+.note-label {
+  font-weight: bold;
+  color: #00e5ff;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.note-section textarea {
+  width: 100%;
+  height: 80px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  border-radius: 6px;
+  padding: 6px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+/* === ARMI DROP ZONE === */
+.armi-drop-zone {
+  min-height: 60px;
+  border: 2px dashed rgba(0,229,255,0.4);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.drop-hint {
+  color: rgba(255,255,255,0.3);
+  text-align: center;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.arma-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 8px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+/* === PALLINI SALUTE === */
+.pallini-salute {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  max-width: 200px;
+}
+
+.pallino-salute {
+  font-size: 18px;
+  color: rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.pallino-salute.attivo {
+  color: #ff4444;
+  text-shadow: 0 0 6px #ff4444;
+}
+/* === SCHEDA ARMA === */
+.item-sheet {
+  padding: 12px;
+  color: white;
+  background: #1a1a2e;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.item-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.item-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+
+.item-header input[type="text"] {
+  flex: 1;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item-row label {
+  font-weight: bold;
+  color: #00e5ff;
+  font-size: 12px;
+}
+
+.item-row select {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+.item-row select option {
+  background: #1a1a2e;
+  color: white;
+}
+
+.item-row textarea {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  border-radius: 6px;
+  padding: 6px;
+  resize: vertical;
+  min-height: 100px;
+}
+.arma-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.arma-item.equipaggiata {
+  background: rgba(0,229,255,0.1);
+  border: 1px solid rgba(0,229,255,0.4);
+}
+
+.arma-tier {
+  font-size: 11px;
+  color: #00e5ff;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.arma-nome {
+  flex: 1;
+  font-weight: bold;
+}
+
+.equipaggia-arma {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  border-radius: 4px;
+  padding: 2px 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.equipaggia-arma:hover {
+  background: rgba(0,229,255,0.2);
+  border-color: #00e5ff;
+}

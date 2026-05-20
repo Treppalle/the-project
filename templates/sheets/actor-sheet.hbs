@@ -1,0 +1,109 @@
+<div class="sheet-wrapper">
+
+  <!-- TAB NAVIGATION -->
+  <nav class="sheet-tabs">
+    <button class="tab-btn" data-tab="scheda">Scheda</button>
+    <button class="tab-btn" data-tab="note">Note & Armi</button>
+  </nav>
+
+  <!-- TAB 1: SCHEDA -->
+  <div class="tab-content" data-tab="scheda">
+    <div class="card-background"></div>
+    <div class="card-content">
+
+      <div class="card-top-left">
+        <img class="actor-image" src="{{actor.img}}" alt="{{actor.name}}" title="Clicca per cambiare"/>
+        <div class="actor-name">{{actor.name}}</div>
+      </div>
+
+      <div class="card-top-right">
+        <div class="stat-row">
+          <span class="stat-label">Dado Fortuna:</span>
+          <span class="stat-value dado-fortuna">{{dadoFortuna}}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Età:</span>
+          <input type="number" name="system.eta" value="{{system.eta}}" min="0"/>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Favori Totali:</span>
+          <input type="number" name="system.favori" value="{{system.favori}}" min="0"/>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Salute:</span>
+          <div class="pallini-salute" data-field="system.salute">
+            {{#each salutePallini}}
+            <span class="pallino-salute {{#if this}}attivo{{/if}}" data-index="{{@index}}">●</span>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+
+      <div class="card-bottom-left">
+        <div class="abilita-row">
+          <span class="stat-label">Sangue Freddo:</span>
+          <div class="pallini" data-field="system.coolLevel">
+            <span class="pallino {{#if (gte system.coolLevel 1)}}attivo{{/if}}" data-value="1">●</span>
+            <span class="pallino {{#if (gte system.coolLevel 2)}}attivo{{/if}}" data-value="2">●</span>
+            <span class="pallino {{#if (gte system.coolLevel 3)}}attivo{{/if}}" data-value="3">●</span>
+          </div>
+        </div>
+        <div class="abilita-row">
+          <span class="stat-label">Abilità di Guida:</span>
+          <div class="pallini" data-field="system.driveLevel">
+            <span class="pallino {{#if (gte system.driveLevel 1)}}attivo{{/if}}" data-value="1">●</span>
+            <span class="pallino {{#if (gte system.driveLevel 2)}}attivo{{/if}}" data-value="2">●</span>
+            <span class="pallino {{#if (gte system.driveLevel 3)}}attivo{{/if}}" data-value="3">●</span>
+          </div>
+        </div>
+        <div class="abilita-row">
+          <span class="stat-label">Costituzione:</span>
+          <div class="pallini" data-field="system.constitutionLevel">
+            <span class="pallino {{#if (gte system.constitutionLevel 1)}}attivo{{/if}}" data-value="1">●</span>
+            <span class="pallino {{#if (gte system.constitutionLevel 2)}}attivo{{/if}}" data-value="2">●</span>
+            <span class="pallino {{#if (gte system.constitutionLevel 3)}}attivo{{/if}}" data-value="3">●</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-bottom-right">
+        <span class="stat-label">Competenze:</span>
+        <input type="text" name="system.competenza1" value="{{system.competenza1}}" placeholder="Campo libero..."/>
+        <input type="text" name="system.competenza2" value="{{system.competenza2}}" placeholder="Campo libero..."/>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TAB 2: NOTE & ARMI -->
+<div class="tab-content" data-tab="note">
+  <div class="note-content">
+    <div class="note-section">
+      <label class="note-label">Background del personaggio</label>
+      <textarea name="system.background" placeholder="Scrivi il background del tuo personaggio...">{{system.background}}</textarea>
+    </div>
+    <div class="note-section">
+      <label class="note-label">Appunti</label>
+      <textarea name="system.appunti" placeholder="Scrivi i tuoi appunti...">{{system.appunti}}</textarea>
+    </div>
+    <div class="note-section">
+      <label class="note-label">Armi</label>
+      <div class="armi-drop-zone" id="armi-drop-zone">
+        {{#if items.length}}
+          {{#each items}}
+            <div class="arma-item {{#if (eq id ../system.armaEquipaggiata)}}equipaggiata{{/if}}" data-item-id="{{id}}">
+              <span class="arma-tier">Tier {{system.tier}}</span>
+              <span class="arma-nome">{{name}}</span>
+              <button type="button" class="equipaggia-arma" data-item-id="{{id}}" data-tier="{{system.tier}}">
+                {{#if (eq id ../system.armaEquipaggiata)}}✅ Equipaggiata{{else}}Equipaggia{{/if}}
+              </button>
+              <button type="button" class="rimuovi-arma" data-item-id="{{id}}">🗑</button>
+            </div>
+          {{/each}}
+        {{else}}
+          <p class="drop-hint">Trascina qui le armi dal compendio</p>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>

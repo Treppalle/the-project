@@ -1,14 +1,12 @@
 # The Project — Sistema GDR per Foundry VTT
 
-**The Project** è un sistema di gioco di ruolo multiambientazione basato su D6, pensato per essere semplice, modulare e narrativo.  
-Include una scheda PG in stile “patente” con gestione automatica di salute, armi, favori e attacchi.
+**The Project** è un sistema di gioco di ruolo multiambientazione, pensato per essere semplice, modulare e narrativo.  
 
 ---
 
 ## 🧩 Funzionalità principali
 
 - Scheda PG visiva e compatta
-- Calcolo automatico della **Salute**
 - Gestione dinamica delle **armi** con livello richiesto
 - Attacchi con **Sangue Freddo** e uso dei **Favori**
 - Controlli in fase di creazione PG (max 4 punti, max livello 2)
@@ -24,5 +22,5 @@ Include una scheda PG in stile “patente” con gestione automatica di salute, 
 
 ### Metodo 2 — Da manifest URL
 1. Apri Foundry → “Add-on Modules” → “Install System”
-2. Inserisci questo URL:
+2. Inserisci questo URL: https://raw.githubusercontent.com/Treppalle/the-project/main/system.json
 
